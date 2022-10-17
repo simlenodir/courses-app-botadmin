@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import { Button } from 'reactstrap';
+
 function App() {
   const [data, setData] = useState([]);
 
@@ -17,8 +20,8 @@ function App() {
             <li key={i}>
               <h4>{e.name}</h4>
               <p>{e.location}</p>
-              <span>{e.phone}</span>
-              <button className="btn btn-success-primary"></button>
+              <span>{e.phone}</span><br />
+              <Button> button</Button>
             </li>
           ))}
       </ul>
