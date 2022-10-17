@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Navbar } from "./Navabar.jsx";
 import {
   CardLink,
   ListGroup,
@@ -19,8 +20,10 @@ function App() {
       .catch((err) => console.log(err));
   }, [data]);
   return (
-    <div className="App container">
-      <h3 className="text-center">Admin page of Courses </h3>
+    <>
+      <Navbar />
+       <div className="App container">
+      <h3 className="text-center my-4">Admin page of Courses </h3>
       <ul className="d-flex flex-wrap justify-content-around my-3">
         {data.length &&
           data.map((e, i) => (
@@ -33,9 +36,12 @@ function App() {
                 <CardBody>
                   <CardTitle tag="h5">{e.name}</CardTitle>
                 </CardBody>
-                <ListGroup flush style={{
-                  height: "10rem",
-                }}>
+                <ListGroup
+                  flush
+                  style={{
+                    height: "10rem",
+                  }}
+                >
                   <ListGroupItem>phone: {e.phone}</ListGroupItem>
                   <ListGroupItem>location: {e.location}</ListGroupItem>
                 </ListGroup>
@@ -48,6 +54,8 @@ function App() {
           ))}
       </ul>
     </div>
+    </>
+ 
   );
 }
 
