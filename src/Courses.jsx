@@ -38,8 +38,7 @@ export const Courses = () => {
                     height: "10rem",
                   }}
                 >
-                  <ListGroupItem>phone: {e.phone}</ListGroupItem>
-                  <ListGroupItem>location: {e.location}</ListGroupItem>
+                  <ListGroupItem>phone: {e.describtion}</ListGroupItem>
                 </ListGroup>
                 <CardBody>
                   <CardLink href="#">Edit</CardLink>
