@@ -1,36 +1,28 @@
 import { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import { Navbar } from "./Navabar.jsx";
 import {
-  CardLink,
-  ListGroup,
-  ListGroupItem,
-  CardTitle,
-  CardBody,
-  Card,
-} from "reactstrap";
-import { Courses } from "./Courses.jsx";
-import {EditCourses} from "./editCourses.jsx"
+    CardLink,
+    ListGroup,
+    ListGroupItem,
+    CardTitle,
+    CardBody,
+    Card,
+  } from "reactstrap";
 
-function App() {
-  const [data, setData] = useState([]);
+export const Courses = () => {
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("https://course-bot-again.herokuapp.com/courseRequest")
+    fetch("https://course-bot-again.herokuapp.com/courses")
       .then((res) => res.json())
-      .then((data) => setData(data))
+      .then((data) => setCourses(data))
       .catch((err) => console.log(err));
-  }, [data]);
+  }, [courses]);
 
-  
   return (
     <>
-      <Navbar />
-       <div className="App container">
-      <h3 className="text-center my-4">Admin page of Courses </h3>
       <ul className="d-flex flex-wrap justify-content-around my-3">
-        {data.length &&
-          data.map((e, i) => (
+        {courses.length &&
+          courses.map((e, i) => (
             <li className="list-unstyled mx-1 my-3" key={i}>
               <Card
                 style={{
@@ -57,13 +49,6 @@ function App() {
             </li>
           ))}
       </ul>
-      <h3 className="text-center"> Edit new Coureses</h3>
-      <EditCourses />
-      <Courses/>
-    </div>
     </>
- 
   );
-}
-
-export default App;
+};
