@@ -40,8 +40,8 @@ function App() {
                   <ListGroupItem>location: {e.location}</ListGroupItem>
                 </ListGroup>
                 <CardBody>
-                  <CardLink href="#">Card Link</CardLink>
-                  <CardLink href="#">Another Card Link</CardLink>
+                  <CardLink href="#">Edit</CardLink>
+                  <CardLink href="#">Delete</CardLink>
                 </CardBody>
               </Card>
             </li>
