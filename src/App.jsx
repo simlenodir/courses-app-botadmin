@@ -15,14 +15,14 @@ function App() {
         {data.length &&
           data.map((e, i) => (
             <li key={i}>
-              <div class="card" style="width:400px">
-                <div class="card-body">
-                  <h4 class="card-title">{e.name}</h4>
-                  <p class="card-text">
+              <div className="card" style="width:400px">
+                <div className="card-body">
+                  <h4 className="card-title">{e.name}</h4>
+                  <p className="card-text">
                     {e.location}
                   </p>
                   <span>{e.phone}</span>
-                  <a href="#" class="btn btn-primary">
+                  <a href="#" className="btn btn-primary">
                     See Profile
                   </a>
                 </div>
